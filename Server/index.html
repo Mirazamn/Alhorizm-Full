@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="DeleteUser()">Delete user</button>
+    <button onclick="AddUser()">Add User</button>
+
+    <button onclick="DeletePost()">Delete post</button>
+    <button onclick="NewPost()">New Post</button>
+    <button onclick="UpdatePost()">Update Post</button>
+
+    <script>
+        // <Users>
+        const DeleteUser = () => {
+            fetch('http://localhost:3333/users/2', { method: 'DELETE' })
+                .then(() => alert("User deleted!"))
+                .catch(() => alert('Error in front!'))
+        }
+    
+        const AddUser = () => {
+            fetch('http://localhost:3333/users')
+            .then((res) => res.json())
+            .then((users) => {
+                fetch('http://localhost:3333/users', {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                        name: "Mirazam",
+                        surname: "Mirsaidov",
+                        username: "kufu_panda",
+                        password: "1234",
+                        id: String(users.length + 1)
+                })
+            })
+                .then(() => alert("User added!"))
+                .catch(() => alert("Error post'ing in front."))
+            })
+            .catch(() => alert('Main Error!'))
+        }
+        // </Users>
+
+        // <Posts>
+        const DeletePost = () => {
+            fetch('http://localhost:3333/posts/6', { method: 'DELETE' })
+                .then(() => alert("Post deleted"))
+                .catch(() => alert("Error deleting post"))
+        }
+        
+        const NewPost = () => {
+            fetch('http://localhost:3333/posts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    Title: "New Post",
+                    paragraph: "New Post",
+                    author: "New Post",
+                    date: 11111111,
+                    Likes: 28,
+                    id: "12"
+                })
+            }).then(() => alert('Sent!'))
+            .catch(() => "Error ")
+        }
+
+        const UpdatePost = () => {
+            fetch('http://localhost:3333/posts/1', {
+                method: 'PUT', 
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    Title: "Updated Post",
+                    paragraph: "Updated Post",
+                    author: "Updated Post",
+                    date: "13.06.2010",
+                    Likes: 47
+                })
+            })
+            .then(() => alert('Sent'))
+            .catch(() => alert('Error !!!aldcm'))
+        }
+        // </Post>
+    </script>
+</body>
+</html>

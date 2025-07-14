@@ -1,0 +1,15 @@
+{
+  "name": "alhorithm-full",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "full": "concurrently \"npm run dev --prefix client\" \"cd Server && node server\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
