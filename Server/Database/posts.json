@@ -4,7 +4,7 @@
     "paragraph": "Xiphias animadverto cauda assumenda depromo uredo tempus odit tabesco repellendus. Vulticulus alter aegrus vesica annus vindico coaegresco custodia aptus aeneus. Surgo curso aperio terreo tertius.",
     "author": "Casandra_Reilly82",
     "date": "07.07.2025",
-    "Likes": 110,
+    "Likes": 111,
     "id": "1",
     "comments": [
       {
@@ -13,9 +13,14 @@
         "id": "1"
       },
       {
-        "value": "This is my favorite post on the site.",
-        "username": "FanGirl23",
-        "id": "2"
+        "value": "Cool",
+        "username": "king",
+        "id": 2
+      },
+      {
+        "value": "Super",
+        "username": "king",
+        "id": 3
       }
     ]
   },
